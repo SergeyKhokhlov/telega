@@ -12,7 +12,7 @@ def start(update, context):
     global questions, responses
     with open("static/json/bot.json", encoding='utf-8') as file:
         test_json = json.load(file.readlines())
-        print(test_json["test"])
+        print(test_json)
     reply_keyboard = [["Готов"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     update.message.reply_text("Вас приветствует бот 'Тестирующая система', "
