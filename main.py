@@ -1,5 +1,6 @@
 from telegram.ext import Updater, MessageHandler, Filters
 from telegram.ext import CommandHandler
+import json
 from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 
 TOKEN = "852223716:AAGdVVMYgHTro5LM7yTfmprosTgE9cBTxOA"
@@ -10,7 +11,7 @@ responses = []
 def start(update, context):
     global questions, responses
     with open("static/json/bot.json", encoding='utf-8') as file:
-        test_json = file.readlines()
+        test_json = json.load(file.readline())
         print(test_json["test"])
     reply_keyboard = [["Готов"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
