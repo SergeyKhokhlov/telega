@@ -57,9 +57,9 @@ def third_response(update, context):
         if update.message.text == responses[1]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[2]}")
-            return 3
+            return 4
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[2]}")
-        return 3
+        return 4
     else:
         return ConversationHandler.END
 
@@ -70,9 +70,9 @@ def fourth_response(update, context):
         if update.message.text == responses[2]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[3]}")
-            return 4
+            return 5
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[3]}")
-        return 4
+        return 5
     else:
         return ConversationHandler.END
 
@@ -83,9 +83,9 @@ def fifth_response(update, context):
         if update.message.text == responses[3]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[4]}")
-            return 2
+            return 6
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[4]}")
-        return 2
+        return 6
     else:
         return ConversationHandler.END
 
@@ -96,9 +96,9 @@ def sixth_response(update, context):
         if update.message.text == responses[4]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[5]}")
-            return 2
+            return 7
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[5]}")
-        return 2
+        return 7
     else:
         return ConversationHandler.END
 
@@ -109,9 +109,9 @@ def seventh_response(update, context):
         if update.message.text == responses[5]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[6]}")
-            return 2
+            return 8
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[6]}")
-        return 2
+        return 8
     else:
         return ConversationHandler.END
 
@@ -122,9 +122,9 @@ def eighth_response(update, context):
         if update.message.text == responses[6]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[7]}")
-            return 2
+            return 9
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[7]}")
-        return 2
+        return 9
     else:
         return ConversationHandler.END
 
@@ -135,9 +135,9 @@ def ninth_response(update, context):
         if update.message.text == responses[7]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[8]}")
-            return 2
+            return 10
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[8]}")
-        return 2
+        return 10
     else:
         return ConversationHandler.END
 
@@ -148,9 +148,9 @@ def tenth_response(update, context):
         if update.message.text == responses[8]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[9]}")
-            return 2
+            return 11
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[9]}")
-        return 2
+        return 11
     else:
         return ConversationHandler.END
 
@@ -173,6 +173,14 @@ def main():
             # Функция читает ответ на первый вопрос и задаёт второй.
             1: [MessageHandler(Filters.text, first_response)],
             2: [MessageHandler(Filters.text, second_response)],
+            3: [MessageHandler(Filters.text, third_response)],
+            4: [MessageHandler(Filters.text, fourth_response)],
+            5: [MessageHandler(Filters.text, fifth_response)],
+            6: [MessageHandler(Filters.text, sixth_response)],
+            7: [MessageHandler(Filters.text, seventh_response)],
+            8: [MessageHandler(Filters.text, eighth_response)],
+            9: [MessageHandler(Filters.text, ninth_response)],
+            10: [MessageHandler(Filters.text, tenth_response)],
         },
         # Точка прерывания диалога. В данном случае — команда /stop.
         fallbacks=[CommandHandler('stop', stop)]
