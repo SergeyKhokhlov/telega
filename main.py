@@ -18,13 +18,14 @@ def start(update, context):
         for i in test:
             questions.append(i['question'])
             responses.append(i['response'])
-    reply_keyboard = [["Готов"]]
+    reply_keyboard = [["/stop"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     update.message.reply_text("Вас приветствует бот 'Тестирующая система', "
                               "в нем вы можете пройти "
                               "тест по знаниям соцсетей. "
-                              "Если вы готовы начать нажмите на кнопку "
-                              "'Готов'", reply_markup=markup)
+                              "Если вы готовы начать, напишите что угодно. Но если вам надоело и "
+                              "вы хотите прекратить игру, то нажмите "
+                              "/stop.", reply_markup=markup)
 
 
 def first_response(update, context):
@@ -65,10 +66,8 @@ def main():
         # Вариант с двумя обработчиками, фильтрующими текстовые сообщения.
         states={
             # Функция читает ответ на первый вопрос и задаёт второй.
-            1: [MessageHandler("Готов", first_response)],
+            1: [MessageHandler(Filters.text, first_response)],
             2: [MessageHandler(Filters.text, second_response)],
-            # Функция читает ответ на второй вопрос и завершает диалог.
-            3: [MessageHandler(Filters.text, second_response)]
         },
         # Точка прерывания диалога. В данном случае — команда /stop.
         fallbacks=[CommandHandler('stop', stop)]
