@@ -35,6 +35,7 @@ def first_response(update, context):
         update.message.reply_text(questions[0])
         return 2
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -48,6 +49,7 @@ def second_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[1]}")
         return 3
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -61,6 +63,7 @@ def third_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[2]}")
         return 4
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -74,6 +77,7 @@ def fourth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[3]}")
         return 5
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -87,6 +91,7 @@ def fifth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[4]}")
         return 6
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -100,6 +105,7 @@ def sixth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[5]}")
         return 7
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -113,6 +119,7 @@ def seventh_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[6]}")
         return 8
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -126,6 +133,7 @@ def eighth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[7]}")
         return 9
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -139,6 +147,7 @@ def ninth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[8]}")
         return 10
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -152,6 +161,7 @@ def tenth_response(update, context):
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[9]}")
         return 11
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
@@ -165,6 +175,7 @@ def end(update, context):
         update.message.reply_text(f"Не верно. Вы ответили правильно на:{correct_answers} вопросов")
         return ConversationHandler.END
     else:
+        update.message.reply_text("Диалог окончен.")
         return ConversationHandler.END
 
 
