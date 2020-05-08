@@ -57,12 +57,12 @@ def main():
     updater = Updater(TOKEN, use_context=True)
     dp = updater.dispatcher
     dp.add_handler(CommandHandler("start", start))
-    dp.add_handler(MessageHandler(Filters.regex("Готов"),
-                                  first_response))
+    # dp.add_handler(MessageHandler(Filters.regex("Готов"),
+    #                               first_response))
     conv_handler = ConversationHandler(
         # Точка входа в диалог.
         # В данном случае — команда /start. Она задаёт первый вопрос.
-        entry_points=[CommandHandler('start', start)],
+        entry_points=[CommandHandler('Готов', first_response())],
 
         # Состояние внутри диалога.
         # Вариант с двумя обработчиками, фильтрующими текстовые сообщения.
