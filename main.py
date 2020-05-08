@@ -155,23 +155,10 @@ def tenth_response(update, context):
         return ConversationHandler.END
 
 
-def eleventh_response(update, context):
-    global questions, responses, correct_answers
-    if update.message.text != "/stop":
-        if update.message.text == responses[9]:
-            correct_answers += 1
-            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[10]}")
-            return 12
-        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[10]}")
-        return 12
-    else:
-        return ConversationHandler.END
-
-
 def end(update, context):
     global questions, responses, correct_answers
     if update.message.text != "/stop":
-        if update.message.text == responses[10]:
+        if update.message.text == responses[9]:
             correct_answers += 1
             update.message.reply_text(f"Верно. Вы ответили правильно на:{correct_answers} вопросов")
             return 12
@@ -208,8 +195,7 @@ def main():
             8: [MessageHandler(Filters.text, eighth_response)],
             9: [MessageHandler(Filters.text, ninth_response)],
             10: [MessageHandler(Filters.text, tenth_response)],
-            11: [MessageHandler(Filters.text, eleventh_response)],
-            12: [MessageHandler(Filters.text, end)],
+            11: [MessageHandler(Filters.text, end)],
         },
         # Точка прерывания диалога. В данном случае — команда /stop.
         fallbacks=[CommandHandler('stop', stop)]
