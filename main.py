@@ -14,7 +14,9 @@ def start(update, context):
         test_json = json.loads(file.readline())
         test = test_json['test']
         for i in test:
-            print(i)
+            questions.append(i['question'])
+            responses.append(i['response'])
+        print(questions)
     reply_keyboard = [["Готов"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     update.message.reply_text("Вас приветствует бот 'Тестирующая система', "
