@@ -44,9 +44,9 @@ def second_response(update, context):
         if update.message.text == responses[0]:
             correct_answers += 1
             update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[1]}")
-            return 2
+            return 3
         update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[1]}")
-        return 2
+        return 3
     else:
         return ConversationHandler.END
 
