@@ -1,0 +1,44 @@
+{
+  "test": [
+    {
+      "question": "В каком году был основан telegram?",
+      "response": "2013"
+    },
+    {
+      "question": "Кто основал telegram?",
+      "response": "Павел Дуров"
+    },
+    {
+      "question": "В каком городе находится офис telegram?",
+      "response": "Дубай"
+    },
+    {
+      "question": "В каком году был основан vk?",
+      "response": "2006"
+    },
+    {
+      "question": "Кем был основан facebook?",
+      "response": "Марк Цукерберг"
+    },
+    {
+      "question": "В каком году был основан facebook?",
+      "response": "2004"
+    },
+    {
+      "question": "Кем был основан instagram?",
+      "response": "Кевин Систром"
+    },
+    {
+      "question": "В каком году был основан myspace?",
+      "response": "2003"
+    },
+    {
+      "question": "В каком городе расположен офис соцсети одноклассники?",
+      "response": "Москва"
+    },
+    {
+      "question": "Как называется социальная сеть от Яндекс?",
+      "response": "Аура"
+    }
+  ]
+}
