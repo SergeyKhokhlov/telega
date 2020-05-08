@@ -33,7 +33,7 @@ def first_response(update, context):
         update.message.reply_text(questions[0])
         if update.message.text == responses[0]:
             correct_answers += 1
-        return 2
+        return 1
     else:
         return ConversationHandler.END
 
