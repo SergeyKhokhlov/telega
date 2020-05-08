@@ -43,10 +43,113 @@ def second_response(update, context):
     if update.message.text != "/stop":
         if update.message.text == responses[0]:
             correct_answers += 1
-            update.message.reply_text("Верно. А вот и следующий вопрос.")
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[1]}")
             return 2
-        update.message.reply_text("Не верно. А вот и следующий вопрос.")
-        update.message.reply_text(questions[1])
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[1]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def third_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[1]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[2]}")
+            return 3
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[2]}")
+        return 3
+    else:
+        return ConversationHandler.END
+
+
+def fourth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[2]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[3]}")
+            return 4
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[3]}")
+        return 4
+    else:
+        return ConversationHandler.END
+
+
+def fifth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[3]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[4]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[4]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def sixth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[4]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[5]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[5]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def seventh_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[5]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[6]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[6]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def eighth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[6]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[7]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[7]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def ninth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[7]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[8]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[8]}")
+        return 2
+    else:
+        return ConversationHandler.END
+
+
+def tenth_response(update, context):
+    global questions, responses, correct_answers
+    if update.message.text != "/stop":
+        if update.message.text == responses[8]:
+            correct_answers += 1
+            update.message.reply_text(f"Верно. А вот и следующий вопрос.\n{questions[9]}")
+            return 2
+        update.message.reply_text(f"Не верно. А вот и следующий вопрос.\n{questions[9]}")
         return 2
     else:
         return ConversationHandler.END
