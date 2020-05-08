@@ -11,7 +11,7 @@ responses = []
 def start(update, context):
     global questions, responses
     with open("static/json/bot.json", encoding='utf-8') as file:
-        test_json = json.load(file.readline())
+        test_json = json.load(file.readlines())
         print(test_json["test"])
     reply_keyboard = [["Готов"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
