@@ -56,8 +56,6 @@ def stop(update, context):
 def main():
     updater = Updater(TOKEN, use_context=True)
     dp = updater.dispatcher
-    dp.add_handler(MessageHandler(Filters.regex("Готов"),
-                                  first_response))
     conv_handler = ConversationHandler(
         # Точка входа в диалог.
         # В данном случае — команда /start. Она задаёт первый вопрос.
@@ -67,9 +65,10 @@ def main():
         # Вариант с двумя обработчиками, фильтрующими текстовые сообщения.
         states={
             # Функция читает ответ на первый вопрос и задаёт второй.
-            1: [MessageHandler(Filters.text, first_response)],
+            1: [MessageHandler("Готов", first_response)],
+            2: [MessageHandler(Filters.text, second_response)],
             # Функция читает ответ на второй вопрос и завершает диалог.
-            2: [MessageHandler(Filters.text, second_response)]
+            3: [MessageHandler(Filters.text, second_response)]
         },
         # Точка прерывания диалога. В данном случае — команда /stop.
         fallbacks=[CommandHandler('stop', stop)]
