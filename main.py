@@ -62,7 +62,7 @@ def main():
     conv_handler = ConversationHandler(
         # Точка входа в диалог.
         # В данном случае — команда /start. Она задаёт первый вопрос.
-        entry_points=[CommandHandler('Готов', first_response())],
+        entry_points=[CommandHandler('Готов', first_response)],
 
         # Состояние внутри диалога.
         # Вариант с двумя обработчиками, фильтрующими текстовые сообщения.
