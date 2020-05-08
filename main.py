@@ -26,6 +26,7 @@ def start(update, context):
                               "Если вы готовы начать, напишите что угодно. Но если вам надоело и "
                               "вы хотите прекратить игру, то нажмите "
                               "/stop.", reply_markup=markup)
+    return 1
 
 
 def first_response(update, context):
