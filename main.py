@@ -9,6 +9,7 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 TOKEN = "852223716:AAGdVVMYgHTro5LM7yTfmprosTgE9cBTxOA"
 questions = []
 responses = []
+temp = {}
 correct_answers = 0
 
 
@@ -20,12 +21,11 @@ def start(update, context):
         for i in test:
             questions.append(i['question'])
             responses.append(i['response'])
-        for i in range(len(questions) - 1, 0, -1):
-            j = random.randint(0, i + 1)
-            questions[i], questions[j] = questions[j], questions[i]
-        for i in range(len(responses) - 1, 0, -1):
-            j = random.randint(0, i + 1)
-            responses[i], responses[j] = responses[j], responses[i]
+            temp[i['question']] = i['response']
+        print(temp)
+        # for i in range(len(test) - 1, 0, -1):
+        #     j = random.randint(0, i + 1)
+        #     questions[i], questions[j] = questions[j], questions[i]
     reply_keyboard = [["/stop"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     update.message.reply_text("Вас приветствует бот 'Тестирующая система', "
