@@ -198,9 +198,11 @@ def end(update, context):
     if update.message.text != "/stop":
         if update.message.text == responses[9]:
             correct_answers += 1
-            update.message.reply_text(f"Верно. Вы ответили правильно на:{correct_answers} вопросов")
+            update.message.reply_text(f"Верно. Вы ответили правильно на:{correct_answers} вопросов",
+                                      reply_markup=ReplyKeyboardRemove)
             return ConversationHandler.END
-        update.message.reply_text(f"Не верно. Вы ответили правильно на:{correct_answers} вопросов")
+        update.message.reply_text(f"Не верно. Вы ответили правильно на:{correct_answers} вопросов",
+                                  reply_markup=ReplyKeyboardRemove)
         return ConversationHandler.END
     else:
         questions = []
