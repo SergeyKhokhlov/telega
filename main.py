@@ -22,10 +22,10 @@ def start(update, context):
             questions.append(i['question'])
             responses.append(i['response'])
             temp.append(i)
+        for i in range(len(temp) - 1, 0, -1):
+            j = random.randint(0, i + 1)
+            temp[i], temp[j] = temp[j], temp[i]
         print(temp)
-        # for i in range(len(test) - 1, 0, -1):
-        #     j = random.randint(0, i + 1)
-        #     questions[i], questions[j] = questions[j], questions[i]
     reply_keyboard = [["/stop"]]
     markup = ReplyKeyboardMarkup(reply_keyboard, one_time_keyboard=True)
     update.message.reply_text("Вас приветствует бот 'Тестирующая система', "
