@@ -9,7 +9,7 @@ from telegram import ReplyKeyboardMarkup, ReplyKeyboardRemove
 TOKEN = "852223716:AAGdVVMYgHTro5LM7yTfmprosTgE9cBTxOA"
 questions = []
 responses = []
-temp = {}
+temp = []
 correct_answers = 0
 
 
@@ -21,7 +21,7 @@ def start(update, context):
         for i in test:
             questions.append(i['question'])
             responses.append(i['response'])
-            temp[i['question']] = i['response']
+            temp.append(i)
         print(temp)
         # for i in range(len(test) - 1, 0, -1):
         #     j = random.randint(0, i + 1)
